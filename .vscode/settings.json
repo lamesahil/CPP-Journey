@@ -1,0 +1,7 @@
+{
+    "C_Cpp.default.compilerPath": "C:/Users/iamsa/Downloads/mingw-w64-v13.0.0/mingw-w64-v13.0.0",
+    "files.associations": {
+        "ostream": "cpp",
+        "iostream": "cpp"
+    }
+}
