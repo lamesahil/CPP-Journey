@@ -1,33 +1,21 @@
 # 🚀 My C++ & DSA Journey
 
-Welcome to my coding repository! 👋
-This repository documents my progress as I learn **C++** and **Data Structures & Algorithms (DSA)**. I am uploading my daily practice codes, solutions to problems, and notes here.
+Welcome! 👋
+This repository serves as a comprehensive collection of my C++ code, ranging from basic syntax to complex Data Structures and Algorithms (DSA).
 
-## 📌 About Me
-- **Language:** C++
-- **Focus:** Logic Building, DSA, Competitive Programming
-- **Tools:** VS Code, Git
+## 📂 What's Inside?
+I am constantly adding new code covering these topics:
+* **Basics:** Loops, Patterns, Functions, Pointers
+* **Data Structures:** Arrays, Strings, Linked Lists, Stacks, Queues
+* **Algorithms:** Sorting, Searching, Recursion
+* **Problem Solving:** Solutions to LeetCode / HackerRank problems
 
-## 📂 Repository Structure
-I have organized my codes by topic to make navigation easy:
+## 💻 Setup & Usage
+This code is written in C++ and can be run on any standard compiler (MinGW, G++, etc.).
 
-| Folder/File | Description |
-|-------------|-------------|
-| `01-Basics` | Variables, Loops, Switch Case, etc. |
-| `02-Arrays` | Linear Search, Binary Search, 2D Arrays |
-| `03-Strings` | String manipulation and algorithms |
-| `04-Functions` | User-defined functions and recursion |
-| `05-Pointers` | Memory management and pointer logic |
-| `06-OOPs` | Classes, Objects, Inheritance, Polymorphism |
-| `DSA-Problems` | Solutions to LeetCode/CodeChef problems |
+1.  **Clone the repo:** `git clone https://github.com/lamesahil/CPP-Journey.git`
+2.  **Open in VS Code.**
+3.  **Run:** Compile any `.cpp` file to see the output.
 
-## 📈 Progress Log
-* **Day 1:** Basics of C++ (Input/Output, Data Types)
-* **Day 2:** Control Flow (If-Else, Loops) & Pattern Printing
-* **Day 3:** Introduction to Arrays & Linear Search
-* *(I will update this list as I learn more)*
-
-## 🛠️ How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/lamesahil/CPP-Journey
+---
+*This repository is automatically updated as I push new code.* 💻
