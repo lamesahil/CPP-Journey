@@ -17,6 +17,23 @@ int main() {
         }
         cout << endl;
     }
+    int arr2[3][4];
+    int n = 3, m = 4;
+    // Input elements into the 2D array
+    cout << "Enter elements for a 3x4 2D array:" << endl;
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            cin >> arr2[i][j];
+        }
+    }
+    // Print the inputted 2D array
+    cout << "You entered the following 2D array:" << endl;
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<m; j++) {
+            cout << arr2[i][j] << " ";
+        }
+        cout << endl;
+    }
 
     return 0;
 }
