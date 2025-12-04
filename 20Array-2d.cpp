@@ -31,6 +31,22 @@ void printSpiral(int arr[][4], int n, int m) {
     }
 }
 
+//Search in sorted matrix
+
+bool searchInSortedMatrix(int arr[][4], int n, int m, int target) {
+    int row = 0, col = m-1;
+    while(row<n && col>=0){
+        if(arr[row][col]==target){
+            return true;
+        }else if(arr[row][col]>target){
+            col--;
+        }else{
+            row++;
+        }
+    }
+    return false;
+}
+
 
 int main() {
     // Declare a 2D array
@@ -69,6 +85,13 @@ int main() {
     }*/
     cout << "Spiral order of the 2D array:" << endl;
     printSpiral(arr, 4, 4);
+
+    int target = 10;
+    if(searchInSortedMatrix(arr, 4, 4, target)){
+        cout<<"\nElement "<<target<<" found in the matrix."<<endl;
+    } else {
+        cout<<"\nElement "<<target<<" not found in the matrix."<<endl;
+    }
 
     return 0;
 }
