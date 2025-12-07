@@ -36,7 +36,7 @@ void toReverse(char word[], int n){
 
 bool isPalindrome(char word[], int n){
     int st = 0;
-    int end = 0;
+    int end = n-1;
     while(st<end){
         if(word[st++] != word[end--]){
             cout << "Not a palindrome" << endl;
@@ -81,7 +81,7 @@ int main() {
     toReverse(word, n);
     cout << "Reversed: " << word << endl;
     isPalindrome(word, n);
-    
+
 
     
     return 0;
