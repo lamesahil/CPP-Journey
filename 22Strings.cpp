@@ -212,3 +212,25 @@ bool areAnagrams(string str1, string str2){
     cout << "Is an anagram" << endl;
     return true;
 }
+
+//Max Occurring Character
+int maxOccur(string s){
+    int count[26]={0};
+    for(int i=0; i<s.length(); i++){
+        int idx = s[i] - 'a';
+        count[idx]++;
+    }
+    int maxi=-1;
+    int ans = 0;
+    for(int i=0; i<26; i++){
+        if(maxi<count[i]){
+            maxi=count[i];
+            ans = i; // index of max occurring character
+        }
+
+    }
+    char finalAns = 'a' + ans; // converting index to character
+    cout << "Max occurring character is: " << finalAns << " with count: " << maxi << endl;
+    return 0;
+
+}
