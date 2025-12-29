@@ -65,6 +65,19 @@ int countSetBits(int n){
     }
     return count;
 }
+
+void fastExponentiation(int &a, int &n){
+    int result = 1;
+    while(n > 0){
+        int last_bit = n & 1; // Get the last bit of n
+        if(last_bit){ // If n is odd
+            result *= a;
+        }
+        a *= a; // Square the base
+        n >>= 1; // Right shift n to divide it by 2
+    }
+    cout<<result<<endl;
+}
 int main(){
     // Bitwise Operators in C++
     /* Bitwise operators perform operations on individual bits of integer data types.
