@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib> // system("cls") ke liye
+#include <fstream>  // <--- File Handling 
 
 using namespace std;
 
@@ -65,8 +66,19 @@ int main() {
         } 
         else {
             // --- STEP 5: BOOKING CONFIRM ---
-            seats[rIndex][cIndex] = 1; // 0 ko 1 bana diya (Booked)
-            price = price + 270; // Har ticket 270 rupaye ki
+            seats[rIndex][cIndex] = 1; // 
+            price = price + 270; 
+
+
+            // ---  FILE HANDLING START  ---
+            ofstream myFile; 
+            myFile.open("bookings.txt", ios::app); 
+            
+            if(myFile.is_open()) {
+                myFile << "Row: " << row << " | Seat: " << col << " | Price: 270\n";
+                myFile.close(); 
+            }
+            // ---  FILE HANDLING END  ---
             
             cout << "\n Success! Seat Book ho gayi.";
             cout << "\nEnjoy the movie! ";
