@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib> // system("cls") ke liye
+#include <fstream>  // <--- File Handling 
 
 using namespace std;
 
@@ -67,6 +68,20 @@ int main() {
             // --- STEP 5: BOOKING CONFIRM ---
             seats[rIndex][cIndex] = 1; // 0 ko 1 bana diya (Booked)
             price = price + 270; // Har ticket 270 rupaye ki
+
+
+            // --- 🔥 NEW ADDITION: FILE HANDLING START 🔥 ---
+            ofstream myFile; // Ek file ka object banaya
+            
+            // "bookings.txt" file kholi. "ios::app" ka matlab hai 'Append'
+            // (Matlab purana data delete mat kar, naya data niche jod de)
+            myFile.open("bookings.txt", ios::app); 
+            
+            if(myFile.is_open()) {
+                myFile << "Row: " << row << " | Seat: " << col << " | Price: 270\n";
+                myFile.close(); // Kaam khatam, file band.
+            }
+            // --- 🔥 FILE HANDLING END 🔥 ---
             
             cout << "\n Success! Seat Book ho gayi.";
             cout << "\nEnjoy the movie! ";
