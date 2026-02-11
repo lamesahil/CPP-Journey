@@ -74,6 +74,26 @@ class Student{
 
 //when we call more than one constructor in a class, it is called constructor overloading.
 
+//Practice ques.
+
+class user{
+    private:
+    int id;
+    string password;
+    public:
+    string username;
+    user(int id) {
+        this->id = id;
+        cout << "User created with ID: " << id << endl;
+    }
+    string getPassword() {
+        return password;
+    }
+    void setPassword(string password) {
+        this->password = password;
+    }
+};
+
 int main() {
     // Creating an object using the default constructor
     car car1;
@@ -89,6 +109,12 @@ int main() {
 
     // Creating an object of the Student class to call the default constructor
     Student student1;
+
+    user u1(123);
+    u1.username = "chinu";
+    u1.setPassword("mypassword");
+    cout << "Username: " << u1.username << endl; 
+    cout << "Password: " << u1.getPassword() << endl;
 
     return 0;
 }
