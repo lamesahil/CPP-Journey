@@ -79,7 +79,8 @@ Child(int x) : Parent(x)
     string name;
     int age;
 public:
-    Person(string n, int a) : name(n), age(a) {}//same as Person(string n, int a){ name = n; age = a; }
+    Person(string n, int a) : name(n), age(a) {}
+    //same as Person(string n, int a){ name = n; age = a; }
     void displayInfo() {
         cout << "Name: " << name << ", Age: " << age << endl;
     }
@@ -88,7 +89,9 @@ public:
 class Student : public Person {
     string studentID;
 public:
-    Student(string n, int a, string id) : Person(n, a), studentID(id) {} //same as Student(string n, int a, string id) : Person(n, a){ studentID = id; }
+    Student(string n, int a, string id) : Person(n, a), studentID(id) {}//parent(n, a) ko call kar diya, ab hume name aur age ko initialize karne ki zarurat nahi hai. 
+
+     //same as Student(string n, int a, string id) : Person(n, a){ studentID = id; }
     void displayStudentInfo() {
         displayInfo(); // Call base class method to display name and age
         cout << "Student ID: " << studentID << endl;
@@ -106,6 +109,9 @@ int main() {
     account.deposit(500.0); // Deposit money
     account.withdraw(200.0); // Withdraw money
     cout << "Current Balance: " << account.getBalance() << endl; // Get current balance
+
+    Student student("Alice", 20, "S12345");
+    student.displayStudentInfo(); // Display student information
 
     return 0;
 }
