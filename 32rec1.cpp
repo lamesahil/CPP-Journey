@@ -77,6 +77,17 @@ int lastOccurence(vector<int>& arr, int target, int i){
     return -1;
 }
 
+int pow(int x, int n){ //O(log n) time complexity
+    if(n==0)
+        return 1;
+    int halfPower = pow(x, n/2);
+    int halfPowerSq = halfPower * halfPower;
+    if(n%2==0)
+        return halfPowerSq;
+    else
+        return x * halfPowerSq;
+}
+
 int main()
 {
     int n;
@@ -100,6 +111,9 @@ int main()
         cout<<"\nFirst occurrence of "<<target<<" is at index: "<<index<<endl;
     else
         cout<<"\n"<<target<<" not found in the array."<<endl;
+
+    cout<<"\nLast occurrence of "<<target<<" is at index: "<<lastOccurence(arr, target, 0)<<endl;
+    cout<<"\n"<<target<<" raised to the power "<<n<<" is: "<<pow(2, 3)<<endl;
 
     return 0;
 }
