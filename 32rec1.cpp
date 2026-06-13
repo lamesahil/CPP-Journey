@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+#include<vector>
 
 int fxn(int n){
 if(n==0 || n==1){
@@ -48,6 +49,34 @@ int fib(int n){
 
 };
 
+bool isSorted(int arr[], int n, int i){
+	if(i==n-1)
+		return true;
+	if(arr[i]>arr[i+1])
+		return false;
+	return isSorted(arr, n, i+1);
+}
+
+int firstOccurence(vector<int>& arr, int target, int i){
+    if(i==arr.size())
+        return -1;
+    if(arr[i]==target)
+        return i;
+    return firstOccurence(arr, target, i+1); 
+
+}
+
+int lastOccurence(vector<int>& arr, int target, int i){
+    if(i==arr.size())
+        return -1;
+    int restArray = lastOccurence(arr, target, i+1);
+    if(restArray != -1)
+        return restArray;
+    if(arr[i]==target)
+        return i;
+    return -1;
+}
+
 int main()
 {
     int n;
@@ -60,5 +89,17 @@ int main()
     printReverse(n);
     cout<<"\nSum of first "<<n<<" natural numbers is: "<<sum(n)<<endl;
     cout<<"\nFibonacci of "<<n<<" is: "<<fib(n)<<endl;
+    int arr1[5] = {1, 2, 3, 4, 5};
+    int arr2[5] = {1, 2, 4, 3, 5};
+    cout<<"\nIs arr1 sorted? "<<(isSorted(arr1, 5, 0) ? "Yes" : "No")<<endl;
+    cout<<"Is arr2 sorted? "<<(isSorted(arr2, 5, 0) ? "Yes" : "No")<<endl;
+    vector<int> arr = {1, 2, 3, 4, 5};
+    int target = 3;
+    int index = firstOccurence(arr, target, 0);
+    if(index != -1)
+        cout<<"\nFirst occurrence of "<<target<<" is at index: "<<index<<endl;
+    else
+        cout<<"\n"<<target<<" not found in the array."<<endl;
+
     return 0;
 }
