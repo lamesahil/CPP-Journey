@@ -68,6 +68,34 @@ void printArray(int arr[], int n){
     cout<<endl;
 }
 
+int search(int arr[], int si, int ei, int key){
+    if(si>ei){
+        return -1; //key not found
+    }
+    int mid = si+(ei-si)/2;
+    if(arr[mid] == key){
+        return mid; //key found at index mid
+    }
+    
+    //l1
+    if(arr[si] <= arr[mid]){ //left half
+        if(arr[si] <= key && key <= arr[mid]){
+            return search(arr, si, mid, key); //search in left half
+        }
+        else{
+            return search(arr, mid+1, ei, key); //search in right half
+        }
+    } else {
+        //l2
+        if(arr[mid] <= key && key <= arr[ei]){
+            return search(arr, mid+1, ei, key); //search in right half
+        }
+        else{
+            return search(arr, si, mid, key); //search in left half
+        }
+    }    
+}
+
 int main(){
     int arr[7] = {6, 7, 3, 4, 1, 2, 5};
     int n = 7;
@@ -75,6 +103,14 @@ int main(){
     quickSort(arr, 0, n-1);
     cout << "Sorted array: ";
     printArray(arr, n);
+    int arr1[7] = {4, 5, 6, 7, 0, 1, 2}; //rotated sorted array
+    int key = 0;
+     for(int i=0; i<n; i++){
+        cout<<arr1[i]<<" ";
+    }
+    cout<<endl;
+    cout << "Index of " << key << " is: " << search(arr1, 0, n-1, key) << endl;
+
 
     return 0;
 }
